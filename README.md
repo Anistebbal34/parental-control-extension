@@ -1,6 +1,8 @@
-# 🧩 Chrome Extension – React + Vite
+# 🧩 Chrome Extension – Parental Control (React + Vite)
 
-This is a WIP (work-in-progress) Chrome extension built with **React** and **Vite**. It's designed to help users manage their time and browsing habits with smart features and performance in mind.
+This is a WIP (work-in-progress) **parental control Chrome extension** built with **React** and **Vite**. It's designed to help parents monitor and manage their children's online activity — especially video consumption — with smart features like time tracking, site blocking, and watch history.
+
+
 
 ## 🚀 Features (so far)
 
