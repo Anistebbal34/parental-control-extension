@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Parental Control Extension",
+  "version": "1.0",
+  "description": "Changes the background color of websites.",
+  "permissions": ["scripting", "tabs" , "idle", "declarativeNetRequestWithHostAccess","declarativeNetRequest","storage",
+  "webNavigation",
+    "alarms",
+    "history"],
+    "background": {
+      "service_worker": "background.js",
+      "type": "module"
+    },
+
+   "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "vite.svg",
+      "48": "vite.svg",
+      "128": "vite.svg"
+    }
+  },
+  "icons": {
+    "16": "vite.svg",
+    "48": "vite.svg",
+    "128": "vite.svg"
+  }, "declarative_net_request": {
+  "rule_resources": [
+    {
+      "id": "ruleset_1",
+      "enabled": true,
+      "path": "rules.json"
+    }
+  ]
+}
+
+}
