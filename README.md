@@ -4,26 +4,35 @@ This is a WIP (work-in-progress) **parental control Chrome extension** built wit
 
 
 
-## 🚀 Features (so far)
+> ⚠️ This project is evolving and will be fully **open source**. Stay tuned for server-side integration and user management.
+
+---
+
+## 🚀 Features
 
 - ⏱ **Track time spent watching videos**
 - 🕓 **View history of watched content**
 - ⛔ **Block distracting websites**
 - 🚫 **Block short-form content (like YouTube Shorts)**
 - 🔒 **Detect suspicious attempts to disable the extension**
+- 🧠 **Detect NSFW content using a TensorFlow model in a sandboxed iframe**
 
-More features coming soon...
+---
+
+## 🛠 Coming Soon
+
+- 👥 **Server-side user management**
+- 🧩 **Advanced parental control features**
+- 📊 **User analytics dashboard**
+
+---
 
 ## ⚙️ Tech Stack
 
 - [React](https://react.dev/)
 - [Vite](https://vitejs.dev/)
 - Chrome Extensions API (Manifest V3)
+- [TensorFlow.js](https://www.tensorflow.org/js)
+- [NSFWJS](https://github.com/infinitered/nsfwjs)
 
-## 📦 Getting Started
-
-1. **Install dependencies**
-
-```bash
-npm install
-```
+---

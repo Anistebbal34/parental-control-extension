@@ -10,11 +10,11 @@ import { registerTimeTrackingEvents } from "./timeTracker.js";
 
 // Track install and update
 chrome.runtime.onInstalled.addListener((details) => {
-  console.log("🔧 Extension installed (reason:", details.reason + ")");
+  console.warn("🔧 Extension installed (reason:", details.reason + ")");
 
   if (details.reason === "update" || details.reason === "install") {
     chrome.storage.local.clear(() => {
-      console.log("🧹 Local storage cleared (for clean dev state)");
+      console.warn("🧹 Local storage cleared (for clean dev state)");
     });
   }
 

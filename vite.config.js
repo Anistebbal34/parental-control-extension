@@ -10,12 +10,13 @@ export default defineConfig({
       input: {
         popup: resolve(__dirname, "popup.html"),
         background: resolve(__dirname, "src/background.js"),
-        content: resolve(__dirname, "src/content.js"),
+        "youtube-content": resolve(__dirname, "src/youtube-content.js"),
+        "nsfw-content": resolve(__dirname, "src/nsfw-content.js"),
       },
       output: {
         entryFileNames: "[name].js",
       },
     },
   },
-  publicDir: "public", // vite.svg and others
+  publicDir: "public",
 });

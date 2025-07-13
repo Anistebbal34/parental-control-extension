@@ -3,16 +3,34 @@
   "name": "Parental Control Extension",
   "version": "1.0",
   "description": "Changes the background color of websites.",
-  "permissions": ["scripting", "tabs" , "idle", "declarativeNetRequestWithHostAccess","declarativeNetRequest","storage",
-  "webNavigation",
+  "permissions": [
+    "scripting",
+    "tabs",
+    "idle",
+    "declarativeNetRequestWithHostAccess",
+    "declarativeNetRequest",
+    "storage",
+    "webNavigation",
     "alarms",
-    "history"],
-    "background": {
-      "service_worker": "background.js",
-      "type": "module"
-    },
-
-   "host_permissions": [
+    "history"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+  {
+    "matches": ["https://www.youtube.com/*"],
+    "js": ["youtube-content.js"],
+    "run_at": "document_idle"
+  },
+  {
+    "matches": ["<all_urls>"],
+    "js": ["nsfw-content.js"],
+    "run_at": "document_idle"
+  }
+],
+  "host_permissions": [
     "<all_urls>"
   ],
   "action": {
@@ -27,14 +45,27 @@
     "16": "vite.svg",
     "48": "vite.svg",
     "128": "vite.svg"
-  }, "declarative_net_request": {
-  "rule_resources": [
-    {
-      "id": "ruleset_1",
-      "enabled": true,
-      "path": "rules.json"
-    }
-  ]
-}
-
+  },
+  "web_accessible_resources": [
+  {
+    "resources": [
+      "sandbox.html",
+      "sandbox.js",
+      "libs/tf.min.js",
+      "libs/nsfwjs.min.js",
+      "models/model.json",
+      "models/group1-shard1of1"
+    ],
+    "matches": ["<all_urls>"]
+  }
+],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
 }
