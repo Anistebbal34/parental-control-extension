@@ -4,7 +4,7 @@ This is a WIP (work-in-progress) **parental control Chrome extension** built wit
 
 
 
-> ⚠️ This project is evolving and will be fully **open source**. Stay tuned for server-side integration and user management.
+> ⚠️ This project is evolving and will be fully **open source**. Stay tuned for server-side integration and user management (backend is in the testing phase ).
 
 ---
 
