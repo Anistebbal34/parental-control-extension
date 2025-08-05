@@ -1,4 +1,4 @@
-# 🧩 Chrome Extension – Parental Control (React + Vite)
+# 🧩 Chrome Extension – Parental Control (React + Vite + nestjs + postgresql)
 
 This is a WIP (work-in-progress) **parental control Chrome extension** built with **React** and **Vite**. It's designed to help parents monitor and manage their children's online activity — especially video consumption — with smart features like time tracking, site blocking, and watch history.
 
