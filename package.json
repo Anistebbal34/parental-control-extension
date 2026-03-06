@@ -10,9 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tensorflow/tfjs": "^3.21.0",
-    "@tensorflow/tfjs-backend-wasm": "^3.21.0",
-    "nsfwjs": "^2.4.0",
+    "@tensorflow/tfjs": "^4.22.0",
+    "@tensorflow/tfjs-backend-wasm": "^4.22.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },

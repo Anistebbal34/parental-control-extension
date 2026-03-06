@@ -12,6 +12,9 @@ export default defineConfig({
         background: resolve(__dirname, "src/background.js"),
         "youtube-content": resolve(__dirname, "src/youtube-content.js"),
         "nsfw-content": resolve(__dirname, "src/nsfw-content.js"),
+        "block-feeds": resolve(__dirname, "src/block-feeds.js"),
+        "facebook-content": resolve(__dirname, "src/facebook-content.js"),
+        "off-screen": resolve(__dirname, "src/off-screen.js"),
       },
       output: {
         entryFileNames: "[name].js",

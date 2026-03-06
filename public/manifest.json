@@ -1,8 +1,9 @@
+
 {
   "manifest_version": 3,
   "name": "Parental Control Extension",
   "version": "1.0",
-  "description": "Changes the background color of websites.",
+  "description": "Parental control extension for monitoring online activity",
   "permissions": [
     "scripting",
     "tabs",
@@ -12,27 +13,33 @@
     "storage",
     "webNavigation",
     "alarms",
-    "history"
+    "offscreen",
+    "history",
+    "notifications"
   ],
   "background": {
     "service_worker": "background.js",
     "type": "module"
   },
   "content_scripts": [
-  {
-    "matches": ["https://www.youtube.com/*"],
-    "js": ["youtube-content.js"],
-    "run_at": "document_idle"
-  },
-  {
-    "matches": ["<all_urls>"],
-    "js": ["nsfw-content.js"],
-    "run_at": "document_idle"
-  }
-],
-  "host_permissions": [
-    "<all_urls>"
+     {
+      "matches": ["https://www.facebook.com/*"],
+      "js": ["facebook-content.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["youtube-content.js", "block-feeds.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["nsfw-content.js"],
+    "run_at": "document_start"
+    }
   ],
+    "incognito": "spanning",
+  "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
@@ -47,18 +54,13 @@
     "128": "vite.svg"
   },
   "web_accessible_resources": [
-  {
-    "resources": [
-      "sandbox.html",
-      "sandbox.js",
-      "libs/tf.min.js",
-      "libs/nsfwjs.min.js",
-      "models/model.json",
-      "models/group1-shard1of1"
-    ],
-    "matches": ["<all_urls>"]
-  }
-],
+    {
+      "resources": [
+        "locked.html"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
   "declarative_net_request": {
     "rule_resources": [
       {
@@ -67,5 +69,12 @@
         "path": "rules.json"
       }
     ]
+  },
+    "sandbox": {
+    "pages": ["sandbox.html"]
+  },
+ "content_security_policy": {
+ "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
   }
+
 }
